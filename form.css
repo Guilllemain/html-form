@@ -24,30 +24,8 @@ tr {
     margin-bottom: 1rem;
 }
 
-input, textarea {
-    border: 1px solid #edf2f7;
-    display: block;
-    color: currentColor;
-    padding: 0.75rem;
-    width: 95.5%;
-    line-height: 1.25;
-    border-radius: .25rem;
-    -webkit-appearance: none;
-    background-color: #edf2f7;
-    outline: none;
-    font-size: 1rem;
-}
-
-textarea {
-    resize: vertical;
-}
-
-input:focus, textarea:focus, select:focus {
-    background-color: white;
-    border: 1px solid #a0aec0;
-}
-
-select {
+input, textarea, select {
+    box-sizing: border-box;
     outline: none;
     -webkit-appearance: none;
     color: currentColor;
@@ -58,8 +36,16 @@ select {
     display: block;
     border: 1px solid #edf2f7;
     border-radius: .25rem;
-    padding-right: 2rem;
     font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus, textarea:focus, select:focus {
+    background-color: white;
+    border: 1px solid #a0aec0;
 }
 
 h1 {
@@ -117,6 +103,13 @@ h1 {
 }
 
 #geoop-form-submit {
+    border: none;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    border: 2px solid #4299e1;
+    background-image: linear-gradient(#4299e1,#4299e1);
+    outline: none;
     text-transform: uppercase;
     letter-spacing: 0.025em;
     display: block;
@@ -124,18 +117,17 @@ h1 {
     margin: auto;
     margin-top: 2rem;
     cursor: pointer;
-    border: none;
-    color: white;
+    color: #4299e1;
     padding: .8rem 1.2rem;
     font-weight: 500;
     border-radius: .25rem;
-    background-color: #4299e1;
     font-size: 1rem;
     transition: all .3s;
 }
 
 #geoop-form-submit:hover {
-    background-color: #2b6cb0;
+    background-size: 100% 100%;
+    color: white;
 }
 
 .icon-container {
@@ -154,7 +146,3 @@ h1 {
     width: 1rem;
     fill: currentColor;
 }
-
-/* .geoop-form-table-value > * {
-    width: 100%;
-} */
