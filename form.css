@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: rgb(109, 167, 156);
+    font-family: 'Fira Mono', monospace;
+    color: #4a5568;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+input, textarea {
+    border: 1px solid #edf2f7;
+    display: block;
+    color: currentColor;
+    padding: 0.75rem;
+    width: 95.5%;
+    line-height: 1.25;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    background-color: #edf2f7;
+    outline: none;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus, textarea:focus, select:focus {
+    background-color: white;
+    border: 1px solid #a0aec0;
+}
+
+select {
+    outline: none;
+    -webkit-appearance: none;
+    color: currentColor;
+    width: 100%;
+    padding: 0.75rem;
+    line-height: 1.25;
+    background-color: #edf2f7;
+    display: block;
+    border: 1px solid #edf2f7;
+    border-radius: .25rem;
+    padding-right: 2rem;
+    font-size: 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.mk-main-wrapper-holder {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+    margin: 3rem auto;
+    width: 30vw;
+    padding: 3rem;
+    border-radius: .25rem;
+    background-color: white;
+}
+
+.geoop-form-table-name {
+    display: flex;
+    font-weight: 500;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    margin-bottom: .3rem;
+}
+
+.geoop-form-table-name .geoop-asterisk {
+    color: red;
+    padding-bottom: .3rem;
+    font-size: .5rem;
+}
+
+.form-date {
+    display: flex;
+}
+.form-date > input {
+    margin-right: 1rem;
+    width: 100%;
+}
+.form-date > div {
+    width: 30%;
+}
+.form-date > div:first-of-type {
+    margin-right: 1rem;
+}
+
+.form-state {
+    display: flex;
+}
+.form-state > input:first-of-type {
+    margin-right: 1rem;
+}
+.form-state > input:last-of-type {
+    width: 50%;
+}
+
+#geoop-form-submit {
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 2rem;
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: .8rem 1.2rem;
+    font-weight: 500;
+    border-radius: .25rem;
+    background-color: #4299e1;
+    font-size: 1rem;
+    transition: all .3s;
+}
+
+#geoop-form-submit:hover {
+    background-color: #2b6cb0;
+}
+
+.icon-container {
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    pointer-events: none;
+    padding: 0 .5rem;
+    display: flex;
+    align-items: center;
+}
+
+.chevron-icon {
+    height: 1rem;
+    width: 1rem;
+    fill: currentColor;
+}
+
+/* .geoop-form-table-value > * {
+    width: 100%;
+} */
