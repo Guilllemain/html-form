@@ -28,7 +28,9 @@ form select#geoop-form-job-start-minute {
     width: 100%;
 }
 
-form table.geoop-form-table input, form table.geoop-form-table select, form table.geoop-form-table textarea {
+form table.geoop-form-table input,
+form table.geoop-form-table select,
+form table.geoop-form-table textarea {
     width: 100%;
     border: 1px solid #edf2f7;
     box-sizing: border-box;
@@ -47,6 +49,12 @@ form table.geoop-form-table input:focus,
 form table.geoop-form-table select:focus,
 form table.geoop-form-table textarea:focus {
     background-color: white;
+    border: 1px solid #a0aec0;
+}
+
+form table.geoop-form-table input:hover,
+form table.geoop-form-table select:hover,
+form table.geoop-form-table textarea:hover {
     border: 1px solid #a0aec0;
 }
 
