@@ -1,3 +1,66 @@
+/* erasing default css */
+
+form table.geoop-form-table {
+    width: 100%;
+}
+
+form table.geoop-form-table select {
+    width: 100%;
+}
+
+form input#geoop-form-stpr,
+form input#geoop-form-job-start-date {
+    width: 100%;
+}
+
+form input#geoop-form-postcode {
+    width: 50%;
+    margin-right: 0;
+}
+
+form input#geoop-form-stpr,
+form input#geoop-form-job-start-date {
+    margin-right: 1rem;
+}
+
+form select#geoop-form-job-start-hour,
+form select#geoop-form-job-start-minute {
+    width: 100%;
+}
+
+form table.geoop-form-table input, form table.geoop-form-table select, form table.geoop-form-table textarea {
+    width: 100%;
+    border: 1px solid #edf2f7;
+    box-sizing: border-box;
+    outline: none;
+    -webkit-appearance: none;
+    color: currentColor;
+    padding: 0.75rem;
+    line-height: 1.25;
+    background-color: #edf2f7;
+    display: block;
+    border-radius: .25rem;
+    font-size: 1rem;
+}
+
+form table.geoop-form-table input:focus,
+form table.geoop-form-table select:focus,
+form table.geoop-form-table textarea:focus {
+    background-color: white;
+    border: 1px solid #a0aec0;
+}
+
+form table.geoop-form-table td.geoop-form-table-name {
+    width: 100%;
+}
+
+form table.geoop-form-table td {
+    padding: 0
+}
+
+
+
+/* main css */
 * {
     margin: 0;
     padding: 0;
@@ -9,43 +72,24 @@ html, body {
 
 body {
     box-sizing: border-box;
-    background-color: rgb(109, 167, 156);
     font-family: 'Fira Mono', monospace;
     color: #4a5568;
+    position: relative;
+    font-size: 100%;
 }
 
 table {
     width: 100%;
 }
 
-tr {
+.geoop-form-table tr {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
 }
 
-input, textarea, select {
-    box-sizing: border-box;
-    outline: none;
-    -webkit-appearance: none;
-    color: currentColor;
-    width: 100%;
-    padding: 0.75rem;
-    line-height: 1.25;
-    background-color: #edf2f7;
-    display: block;
-    border: 1px solid #edf2f7;
-    border-radius: .25rem;
-    font-size: 1rem;
-}
-
 textarea {
     resize: vertical;
-}
-
-input:focus, textarea:focus, select:focus {
-    background-color: white;
-    border: 1px solid #a0aec0;
 }
 
 h1 {
@@ -54,13 +98,58 @@ h1 {
     font-weight: 500;
 }
 
-.mk-main-wrapper-holder {
+.form {
     box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
     margin: 3rem auto;
     width: 30vw;
-    padding: 3rem;
+    padding: 2rem 3rem;
     border-radius: .25rem;
     background-color: white;
+    animation: slideInUp .3s ease-in-out backwards;
+}
+
+.modal {
+    top: 0;
+    left: 0;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(74, 85, 104, 0.7);
+    width: 100%;
+    min-height: 100%;
+    transition: all .3s;
+}
+
+@keyframes slideInUp {
+    0% {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+
+.modal--active {
+    display: block;
+    opacity: 1;
+}
+
+.close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.close-icon > svg {
+    width: 2rem;
+    height: 2rem;
 }
 
 .geoop-form-table-name {
@@ -95,14 +184,9 @@ h1 {
 .form-state {
     display: flex;
 }
-.form-state > input:first-of-type {
-    margin-right: 1rem;
-}
-.form-state > input:last-of-type {
-    width: 50%;
-}
 
-#geoop-form-submit {
+#geoop-form-submit, .open-modal {
+    background-color: white;
     border: none;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -125,6 +209,14 @@ h1 {
     transition: all .3s;
 }
 
+.open-modal {
+    display: inline-block;
+    width: auto;
+    color: white;
+    background-color: #4299e1;
+    margin: 2rem;
+}
+
 #geoop-form-submit:hover {
     background-size: 100% 100%;
     color: white;
@@ -145,4 +237,44 @@ h1 {
     height: 1rem;
     width: 1rem;
     fill: currentColor;
+}
+
+#geoop-form-custom-title-submitting {
+    display: none;
+}
+
+#ui-datepicker-div.ui-widget {
+    font-size: 1em !important;
+}
+
+@media only screen and (max-width: 64em) {
+    body {
+        font-size: 90%;
+    }
+    .form {
+        padding: 1.5rem 2rem;
+        width: 50vw;
+    }
+    form input#geoop-form-job-start-date {
+        width: 80%;
+    }  
+}
+
+@media only screen and (max-width: 50em) {
+    body {
+        font-size: 80%;
+    }
+    .form {
+        padding: 1rem 1.5rem;
+        width: 65vw;
+    } 
+}
+
+@media only screen and (max-width: 37.5em) {
+    body {
+        font-size: 75%;
+    }
+    .form {
+        width: 80vw;
+    }
 }
