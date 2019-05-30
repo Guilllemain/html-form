@@ -188,6 +188,7 @@
     <script>
         try { geoop.load("Mjk0NTI=", { connection: { scheme: "https://", domain: "www.geoop.com" } }); } catch (e) { }
 
+        // handling modal
         const modal = document.querySelector('.modal')
         const button = document.querySelector('.open-modal')
         button.addEventListener('click', () => {
@@ -198,34 +199,6 @@
             if (event.target.matches('.form, .form *')) return
             modal.classList.remove('modal--active')
         })
-
-        const el = document.querySelectorAll('td');
-        el.forEach(e => {
-            e.childNodes.forEach(n => {
-                if (n.nodeType === 3) n.parentNode.removeChild(n)
-            })
-        })
-
-        // add svg icon to select
-        const sel = document.querySelectorAll('select')
-
-        const markup = `
-        <div class="icon-container">
-            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
-            </svg>
-        </div>
-        `;
-        sel.forEach(el => {
-            const wrapper = document.createElement('div');
-            wrapper.style.position = 'relative'
-            el.parentNode.insertBefore(wrapper, el);
-            wrapper.appendChild(el)
-            el.insertAdjacentHTML('afterend', markup)
-        });
-
-        document.querySelector('#geoop-form-job-start-date').parentNode.classList.add('form-date')
-        document.querySelector('#geoop-form-postcode').parentNode.classList.add('form-state')
 
         // temporary
         $(document).ready(function () {

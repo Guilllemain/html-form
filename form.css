@@ -1,31 +1,46 @@
-/* erasing default css */
+/* overwrite default css */
 
-form table.geoop-form-table {
-    width: 100%;
+form td.geoop-form-table-name {
+    color: transparent;
 }
 
-form table.geoop-form-table select {
-    width: 100%;
+form td.geoop-form-table-name > span {
+    color: #4a5568;
+}
+
+form td.geoop-form-table-value {
+    display: flex;
 }
 
 form input#geoop-form-stpr,
 form input#geoop-form-job-start-date {
+    width: 55%;
+}
+
+form table.geoop-form-table,
+form table.geoop-form-table select,
+form table.geoop-form-table td.geoop-form-table-name {
     width: 100%;
 }
 
 form input#geoop-form-postcode {
-    width: 50%;
+    width: 42%;
     margin-right: 0;
 }
 
 form input#geoop-form-stpr,
-form input#geoop-form-job-start-date {
-    margin-right: 1rem;
+form input#geoop-form-job-start-date,
+form select#geoop-form-job-start-hour {
+    margin-right: 3%;
 }
 
 form select#geoop-form-job-start-hour,
 form select#geoop-form-job-start-minute {
-    width: 100%;
+    width: 19.5%;
+}
+
+form select#geoop-form-job-start-minute {
+    margin-right: 0;
 }
 
 form table.geoop-form-table input,
@@ -58,14 +73,9 @@ form table.geoop-form-table textarea:hover {
     border: 1px solid #a0aec0;
 }
 
-form table.geoop-form-table td.geoop-form-table-name {
-    width: 100%;
-}
-
 form table.geoop-form-table td {
     padding: 0
 }
-
 
 
 /* main css */
@@ -81,13 +91,8 @@ html, body {
 body {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    color: #4a5568;
     position: relative;
     font-size: 100%;
-}
-
-table {
-    width: 100%;
 }
 
 .geoop-form-table tr {
@@ -114,10 +119,11 @@ h1 {
     border-radius: .25rem;
     background-color: white;
     animation: slideInUp .3s ease-in-out backwards;
-    z-index:9999;
+    z-index: 9999;
 }
 
 .modal {
+    color: #4a5568;
     top: 0;
     left: 0;
     display: none;
@@ -128,20 +134,6 @@ h1 {
     min-height: 100%;
     transition: all .3s;
 }
-
-@keyframes slideInUp {
-    0% {
-        -webkit-transform: translate3d(0,100%,0);
-        transform: translate3d(0,100%,0);
-        visibility: visible
-    }
-
-    to {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0)
-    }
-}
-
 
 .modal--active {
     display: block;
@@ -154,11 +146,22 @@ h1 {
     right: 1.5rem;
     opacity: .8;
     cursor: pointer;
+    transition: all .3s;
 }
 
 .close-icon > svg {
     width: 2rem;
     height: 2rem;
+    fill: #333a45;
+    transition: all .2s;
+}
+
+.close-icon > svg:hover {
+    fill: #252930;
+}
+
+.close-icon:hover {
+    transform: scale(1.1);
 }
 
 .geoop-form-table-name {
@@ -174,24 +177,7 @@ h1 {
     color: red;
     padding-bottom: .3rem;
     font-size: .5rem;
-}
-
-.form-date {
-    display: flex;
-}
-.form-date > input {
-    margin-right: 1rem;
-    width: 100%;
-}
-.form-date > div {
-    width: 30%;
-}
-.form-date > div:first-of-type {
-    margin-right: 1rem;
-}
-
-.form-state {
-    display: flex;
+    padding-left: .2rem;
 }
 
 #geoop-form-submit, .open-modal {
@@ -242,16 +228,6 @@ h1 {
     align-items: center;
 }
 
-.chevron-icon {
-    height: 1rem;
-    width: 1rem;
-    fill: currentColor;
-}
-
-#geoop-form-custom-title-submitting {
-    display: none;
-}
-
 #ui-datepicker-div.ui-widget {
     font-size: 1em !important;
 }
@@ -263,10 +239,7 @@ h1 {
     .form {
         padding: 1.5rem 2rem;
         width: 50vw;
-    }
-    form input#geoop-form-job-start-date {
-        width: 80%;
-    }  
+    } 
 }
 
 @media only screen and (max-width: 50em) {
@@ -286,4 +259,30 @@ h1 {
     .form {
         width: 80vw;
     }
+}
+
+@keyframes slideInUp {
+    0% {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+select {
+    background-image: linear-gradient(45deg, transparent 50%, #4a5568 50%), linear-gradient(135deg, #4a5568 50%, transparent 50%);
+    background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+}
+
+.chevron-icon {
+    height: 1rem;
+    width: 1rem;
+    fill: currentColor;
 }
