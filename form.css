@@ -228,10 +228,6 @@ h1 {
     align-items: center;
 }
 
-#ui-datepicker-div.ui-widget {
-    font-size: 1em !important;
-}
-
 @media only screen and (max-width: 64em) {
     body {
         font-size: 90%;
@@ -285,4 +281,82 @@ select {
     height: 1rem;
     width: 1rem;
     fill: currentColor;
+}
+
+
+/* jquery datepicker */
+#ui-datepicker-div.ui-widget {
+    font-size: 1em !important;
+}
+
+#ui-datepicker-div.ui-datepicker {
+    
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #a0aec0;
+    box-sizing: border-box;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#ui-datepicker-div .ui-datepicker-header {
+    border: none;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #a0aec0;
+}
+#ui-datepicker-div .ui-widget-header {
+    font-weight: 500;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    text-align: center;
+    background: #edf2f7;
+    /* border: 1px solid #a0aec0; */
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    background: #a0aec0;
+    border: 1px solid #edf2f7;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+    background-color: #a0aec0;
+}
+/* #ui-datepicker-div .ui-datepicker-calendar td:not(.ui-state-disabled):hover {
+} */
+
+.ui-datepicker-prev-hover, .ui-datepicker-next-hover {
+    cursor: pointer;
+}
+
+.ui-datepicker table {
+    margin: 0;
+}
+
+.ui-datepicker td {
+    padding: 0;
+}
+
+.ui-datepicker th {
+    font-weight: 500;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+    padding: .4em;
+}
+
+.ui-datepicker .ui-datepicker-next span,
+.ui-datepicker .ui-datepicker-prev span {
+	background-image: url(jquery/images/ui-icons_222222_256x240.png);
+	background-position: -32px -16px;
+}
+
+.ui-datepicker .ui-datepicker-prev span {
+    background-position: -96px -16px;
 }
