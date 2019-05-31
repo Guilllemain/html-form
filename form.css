@@ -228,48 +228,6 @@ h1 {
     align-items: center;
 }
 
-@media only screen and (max-width: 64em) {
-    body {
-        font-size: 90%;
-    }
-    .form {
-        padding: 1.5rem 2rem;
-        width: 50vw;
-    } 
-}
-
-@media only screen and (max-width: 50em) {
-    body {
-        font-size: 80%;
-    }
-    .form {
-        padding: 1rem 1.5rem;
-        width: 65vw;
-    } 
-}
-
-@media only screen and (max-width: 37.5em) {
-    body {
-        font-size: 75%;
-    }
-    .form {
-        width: 80vw;
-    }
-}
-
-@keyframes slideInUp {
-    0% {
-        -webkit-transform: translate3d(0,100%,0);
-        transform: translate3d(0,100%,0);
-        visibility: visible
-    }
-
-    to {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0)
-    }
-}
-
 select {
     background-image: linear-gradient(45deg, transparent 50%, #4a5568 50%), linear-gradient(135deg, #4a5568 50%, transparent 50%);
     background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px);
@@ -284,39 +242,41 @@ select {
 }
 
 
-/* jquery datepicker */
+/* overwrite jquery datepicker */
 #ui-datepicker-div.ui-widget {
     font-size: 1em !important;
 }
 
 #ui-datepicker-div.ui-datepicker {
-    
     padding: 0;
     font-family: 'Roboto', sans-serif;
     border: 1px solid #a0aec0;
     box-sizing: border-box;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-radius: 0;
+    width: 18em;
 }
 
 #ui-datepicker-div .ui-datepicker-header {
     border: none;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-radius: 0;
     background: #a0aec0;
+    border-bottom: 1px solid rgba(237, 242, 247, .3);
 }
 #ui-datepicker-div .ui-widget-header {
     font-weight: 500;
 }
 
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+    border: none;
     text-align: center;
     background: #edf2f7;
 }
 
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
     background: #a0aec0;
-    border: 1px solid #edf2f7;
+    border: none;
 }
 
 .ui-state-hover,
@@ -325,6 +285,7 @@ select {
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
+    border: none;
     background-color: #a0aec0;
 }
 
@@ -336,16 +297,21 @@ select {
     margin: 0;
 }
 
+.ui-datepicker thead {
+    background-color: #a0aec0;
+}
+
 .ui-datepicker td {
     padding: 0;
 }
 
 .ui-datepicker th {
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 0.8em;
 }
 
 .ui-datepicker td span, .ui-datepicker td a {
-    padding: .4em;
+    padding: .6em;
 }
 
 .ui-datepicker .ui-datepicker-title {
@@ -376,16 +342,66 @@ select {
     background: #edf2f7;
     top: 0;
     border: none;
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    border-radius: 0;
 }
 
 .ui-datepicker .ui-datepicker-next-hover {
     right: 0;
-    border-top-left-radius: 0;
 }
 
 .ui-datepicker .ui-datepicker-prev-hover {
     left: 0;
-    border-top-right-radius: 0;
+}
+
+
+/* media queries and animations */
+@media only screen and (max-width: 64em) {
+    body {
+        font-size: 90%;
+    }
+    .form {
+        padding: 1.5rem 2rem;
+        width: 50vw;
+    }
+    #ui-datepicker-div.ui-widget {
+        font-size: 1.2em !important;
+    }
+}
+
+@media only screen and (max-width: 50em) {
+    body {
+        font-size: 80%;
+    }
+    .form {
+        padding: 1rem 1.5rem;
+        width: 65vw;
+    }
+    #ui-datepicker-div.ui-widget {
+        font-size: 1.3em !important;
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    body {
+        font-size: 75%;
+    }
+    .form {
+        width: 80vw;
+    }
+    #ui-datepicker-div.ui-widget {
+        font-size: 1.5em !important;
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
 }
