@@ -1,5 +1,4 @@
 /* overwrite default css */
-
 form td.geoop-form-table-name {
     color: transparent;
 }
@@ -204,17 +203,17 @@ h1 {
     transition: all .3s;
 }
 
+#geoop-form-submit:hover {
+    background-size: 100% 100%;
+    color: white;
+}
+
 .open-modal {
     display: inline-block;
     width: auto;
     color: white;
     background-color: #4299e1;
     margin: 2rem;
-}
-
-#geoop-form-submit:hover {
-    background-size: 100% 100%;
-    color: white;
 }
 
 .icon-container {
@@ -274,19 +273,18 @@ select {
     background: #edf2f7;
 }
 
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
-    background: #a0aec0;
-    border: none;
-}
-
+.ui-state-highlight, 
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight,
 .ui-state-hover,
 .ui-widget-content .ui-state-hover,
 .ui-widget-header .ui-state-hover,
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
-.ui-widget-header .ui-state-focus {
+.ui-widget-header .ui-state-focus,
+.ui-datepicker thead {
     border: none;
-    background-color: #a0aec0;
+    background: #a0aec0;
 }
 
 .ui-datepicker-prev-hover, .ui-datepicker-next-hover {
@@ -295,10 +293,6 @@ select {
 
 .ui-datepicker table {
     margin: 0;
-}
-
-.ui-datepicker thead {
-    background-color: #a0aec0;
 }
 
 .ui-datepicker td {
@@ -328,27 +322,25 @@ select {
     background-position: -96px -16px;
 }
 
-.ui-datepicker .ui-datepicker-next {
-    right: 0;
-    top: 0;
-}
-
+.ui-datepicker .ui-datepicker-next,
 .ui-datepicker .ui-datepicker-prev {
-    left: 0;
     top: 0;
-}
+} 
 
-.ui-datepicker .ui-datepicker-prev-hover, .ui-datepicker .ui-datepicker-next-hover {
+.ui-datepicker .ui-datepicker-prev-hover,
+.ui-datepicker .ui-datepicker-next-hover {
     background: #edf2f7;
     top: 0;
     border: none;
     border-radius: 0;
 }
 
+.ui-datepicker .ui-datepicker-next,
 .ui-datepicker .ui-datepicker-next-hover {
     right: 0;
 }
 
+.ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-prev-hover {
     left: 0;
 }
