@@ -329,7 +329,6 @@ select {
 
 .ui-datepicker .ui-datepicker-prev-hover,
 .ui-datepicker .ui-datepicker-next-hover {
-    background: #edf2f7;
     top: 0;
     border: none;
     border-radius: 0;
@@ -343,6 +342,28 @@ select {
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-prev-hover {
     left: 0;
+}
+
+.ui-datepicker .ui-datepicker-next span,
+.ui-datepicker .ui-datepicker-prev span {
+    background: linear-gradient(45deg, #4a5568 50%, transparent 50%) 50% 50% / 8em 8em;
+    transform: rotate(-135deg);
+    background-size: .6em .6em;
+    background-position: 4px 2px;
+    background-repeat: no-repeat;
+    transition: all .1s;
+}
+
+.ui-datepicker .ui-datepicker-prev span {
+    transform: rotate(45deg);
+}
+
+.ui-datepicker .ui-datepicker-next:hover span,
+.ui-datepicker .ui-datepicker-prev:hover span {
+    background: linear-gradient(45deg, #252930 50%, transparent 50%) 50% 50% / 8em 8em;
+    background-repeat: no-repeat;
+    background-size: .7em .7em;
+    background-position: 3px 1px;
 }
 
 
